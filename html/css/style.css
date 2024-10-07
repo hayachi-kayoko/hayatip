@@ -75,7 +75,7 @@
 /*メニュー*/
 
 .menu{
-    padding: 8%;
+    padding: 8% !important;
 }
 @media screen and (max-width: 1201px) {
     .menu--sp{
@@ -86,15 +86,16 @@
         position: absolute;
         z-index: 2;
         top: 100px;
-        left: calc(50% - 90px);
+        left: calc(50% - 17%);
         padding: 0px;
     }
     .menu--sp > ul{
-        transition: all .5s .5s;
+        transition: all 0s 0s;
         opacity: 0;
         transform: translateX(-10%);
     }
     .menu--sp.is-open > ul{
+        transition: all .5s .5s;
         opacity: 1;
         transform: translateX(0%);
     }
@@ -123,7 +124,6 @@
 @media screen and (max-width: 1350px) {
     .menu > ul li{
         font-size: 20px;
-        opacity: 0;
     }
 }
 @media screen and (max-width: 1201px) {
