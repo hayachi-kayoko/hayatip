@@ -984,8 +984,15 @@
     color: #FFC1C1;
     text-decoration: underline;
 }
-
 .breadcrumbs_group_item--home a:hover{
+    text-decoration: none;
+}
+
+.breadcrumbs_group_item a{
+    color: #FFC1C1;
+    text-decoration: underline;
+}
+.breadcrumbs_group_item a:hover{
     text-decoration: none;
 }
 
@@ -1148,6 +1155,70 @@
     font-style: normal;
     font-size: 24px;
 }
+@media screen and (max-width: 914px) {
+    .more-btn span i{
+        font-size: 12px;
+    }
+}
+
+/*詳細ページ*/
+.main-single_inner{
+    padding: 0px 56px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+.main-archive_inner_item_img--single{
+    width: calc(50% - 35px);
+}
+
+.main-single_inner_content{
+    width: 50%;
+    padding-left: 35px;
+}
+
+.main-single_inner_content_title{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.main-single_inner_content_text{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.main-single_inner_content_category{
+    margin-bottom: 40px;
+    font-size: 20px;
+    display: block;
+}
+
+.main-single_inner_content_category a{
+    transition: all .5s;
+}
+
+.main-single_inner_content_category a:hover{
+    color: #FF6F61;
+}
+
+.main-single_inner_content_category i{
+    font-style: normal;
+}
+
+.main-single_inner_content_price{
+    font-size: 32px;
+    font-family: "Inter", sans-serif;
+}
+
+.main-single_inner_content_price span{
+    font-size: 16px;
+}
+
+.main-single_inner_content_price strong{
+    font-weight: 400;
+    margin-left: 5px;
+}
 
 /*フッター*/
 .footer{
