@@ -1,3 +1,8 @@
+::selection {
+    color: #fff;
+    background-color: #FFC1C1;
+  }
+
 .body{
     position: relative;
     font-family: "Zen Kaku Gothic Antique", sans-serif;
@@ -71,6 +76,11 @@
         margin: auto;
     }
 }
+@media screen and (max-width: 914px) {
+    .logo--sp img{
+        width: 80px;
+    }
+}
 
 /*メニュー*/
 
@@ -140,6 +150,17 @@
     }
 }
 
+.menu > ul li a,
+.menu > ul li span,
+.menu_btn_arrow img{
+    transition:all .5s;
+}
+
+.menu > ul li a:hover,
+.menu > ul li span:hover{
+    color: #F9907F;
+}
+
 
 .menu ul li a,
 .menu ul li span
@@ -173,6 +194,14 @@
     z-index:2;
     transition: all .5s;
 }
+@media screen and (max-width: 914px) {
+    .menu-btn{
+        width: 80px;
+        height: 80px;
+        top: 20px;
+    }
+}
+
 .menu-btn.is-open{
     width: 100vw;
     height: 100vh;
@@ -186,14 +215,20 @@
 .menu-btn.is-open ul li{
     left: calc(50% - 25px);
 }
+@media screen and (max-width: 914px) {
+    .menu-btn.is-open ul li{
+        left: calc(50% - 25px);
+    }
+}
 
 .menu-btn.is-open ul li:first-child{
     transform: rotate(45deg);
+    top: 50px;
 }
 
 .menu-btn.is-open ul li:last-child{
     transform: rotate(-45deg);
-    top: 34px;
+    top: 50px;
 }
 
 .menu-btn.is-open ul li:nth-child(2){
@@ -230,6 +265,21 @@
         top: 63px;
     }
 }
+@media screen and (max-width: 914px) {
+    .menu-btn ul li{
+        left: 20%;
+    }
+    .menu-btn ul li:first-child{
+        top: 25px;
+    }
+    .menu-btn ul li:nth-child(2){
+        top: 40px;
+        opacity: 1;
+    }
+    .menu-btn ul li:last-child{
+        top: 55px;
+    }
+}
 
 /*メイン*/
 @media screen and (max-width: 1201px) {
@@ -259,6 +309,13 @@
     height: 460px;
     border-radius: 20px;
     position: relative;
+    transition: all .5s;
+}
+.main-index .main-index_catch:hover{
+    opacity: 0.7;
+}
+.main-index .main-index_catch:hover .main-index_btn{
+    background: #F9907F;
 }
 @media screen and (max-width: 914px) {
     .main-index .main-index_catch{
@@ -293,6 +350,13 @@
 
 .main-index .main-index_catch a{
     display: block;
+    width: 100%;
+    height: 460px;
+}
+@media screen and (max-width: 914px) {
+    .main-index .main-index_catch a{
+        height: 370px;
+    }
 }
 
 
@@ -313,6 +377,7 @@
     padding: 15px 0px;
     font-weight: 500;
     border-radius: 20px;
+    transition: all .5s;
 }
 
 @media screen and (max-width: 914px) {
@@ -424,6 +489,10 @@
     border-radius: 20px;
     font-weight: 500;
     box-shadow: rgb(0 0 0 / .25) 2px 4px 4px;
+    transition: all .5s;
+}
+.btn:hover{
+    background: #F9907F;
 }
 @media screen and (max-width: 914px) {
     .btn{
@@ -459,6 +528,9 @@
     margin-top: 10px;
     background: #F9907F;
     box-shadow: rgba(0, 0, 0, 0.1) 0 20px 25px -5px, rgba(0, 0, 0, 0.04) 0 10px 10px -5px;
+}
+.btn--keisoku:hover{
+    background: #FFC1C1;
 }
 @media screen and (max-width: 914px) {
     .btn--keisoku{
