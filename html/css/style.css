@@ -1033,6 +1033,22 @@
     }
 }
 
+.main-archive_title--short{
+    background: #FF6F61;
+}
+.main-archive_title--long{
+    background:#A761FF;
+}
+.main-archive_title--foot{
+    background:#61A0FF;
+}
+.main-archive_title--measurement{
+    background:#51D9B8;
+}
+.main-archive_title--earrings{
+    background: #FF72A5;
+}
+
 /*一覧ページ*/
 .main-archive_inner{
     padding: 0px 110px;
@@ -1251,9 +1267,13 @@
     font-size: 32px;
     font-family: "Inter", sans-serif;
 }
+.main-single_inner_content_price i{
+    font-style: normal;
+    font-size: 14px;
+}
 @media screen and (max-width: 914px) {
     .main-single_inner_content_price{
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
@@ -1262,7 +1282,7 @@
 }
 @media screen and (max-width: 914px) {
     .main-single_inner_content_price span{
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
