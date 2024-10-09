@@ -1152,6 +1152,11 @@
     transition: all .3s;
 }
 
+.main-archive_inner_item_price i{
+    font-style: normal;
+    font-size: 12px;
+}
+
 .main-archive_inner_item a:hover .main-archive_inner_item_price{
     color: #FF6F61;
 }
