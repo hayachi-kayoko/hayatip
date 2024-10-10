@@ -18,13 +18,29 @@
     <?php while($posts -> have_posts()) : $posts -> the_post(); ?>
  
 <?php
+    $cat = get_the_category();
+    $cat = $cat[0];
+?>
+<?php
+//各種設定
+    $imgid = get_post_thumbnail_id();
+    $img = wp_get_attachment_image_src($imgid, 'large');
+    $title = the_title( '', '', false );
+    $price = get_field('price');
+    $mercari = get_field('mercari');;
+    $url = esc_url(get_permalink());
+?>
+<?php
 //ヒアドキュメントでループ内の内容を変数に格納
-$html .= '<article class="main-archive_inner_item">';
-$html .= '<a href="'.esc_url(get_permalink()).'">';
-$html .= '<span class="main-archive_inner_item_category main-archive_inner_item_category--<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></span>';
-$html .= '</a>';
-$html .= '<article class="main-archive_inner_item">';
-$html .= '</article>';
+echo '<article class="main-archive_inner_item">';
+echo '<a href="' . $url . '">';
+echo '<span class="main-archive_inner_item_category main-archive_inner_item_category--' . $cat->slug . '"><span>' . $cat->name . '</span></span>';
+echo '<figure class="main-archive_inner_item_img js-archive-img"><img src="' . $img[0] . '" alt="' . $title . '"></figure>';
+echo '<h3 class="main-archive_inner_item_title">' . $title . '</h3>';
+echo '<p class="main-archive_inner_item_price"><span>¥</span>' . $price . '</p>';
+echo '<p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</span>' . $mercari . '</p>';
+echo '</a>';
+echo '</article>';
 ?>
  
   <?php endwhile; ?>

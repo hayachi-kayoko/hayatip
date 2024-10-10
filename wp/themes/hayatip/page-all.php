@@ -39,8 +39,7 @@
               </a>
           </article>
           <?php endforeach; wp_reset_postdata(); ?>
-        　<div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>
-          <div id="js-loading" class="loading"><img scr="<?php echo get_template_directory_uri(); ?>/image/heart-red.svg"></div>
       </div>
+      <div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>
       </main>
     <?php get_footer(); ?>
