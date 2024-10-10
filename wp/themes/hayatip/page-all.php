@@ -22,9 +22,14 @@
     foreach( $myposts as $post ) :
       setup_postdata($post);
     ?>
+    <?php
+      // カテゴリーのデータを取得
+      $cat = get_the_category();
+      $cat = $cat[0];
+    ?>
           <article class="main-archive_inner_item">
               <a href="<?php echo esc_url(get_permalink()); ?>">
-                  <span class="main-archive_inner_item_category main-archive_inner_item_category--"><span></span></span>
+                  <span class="main-archive_inner_item_category main-archive_inner_item_category--<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></span>
                   <figure class="main-archive_inner_item_img js-archive-img">
                     <?php the_post_thumbnail(array(214, 214)); ?>
                   </figure>
@@ -34,7 +39,8 @@
               </a>
           </article>
           <?php endforeach; wp_reset_postdata(); ?>
-        　<div></div>
+        　<div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>
+          <div id="js-loading" class="loading"><img scr="<?php echo get_template_directory_uri(); ?>/image/heart-red.svg"></div>
       </div>
       </main>
     <?php get_footer(); ?>

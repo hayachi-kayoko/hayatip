@@ -1200,6 +1200,10 @@ html {
     }
 }
 
+.loading{
+    display: none;
+}
+
 /*詳細ページ*/
 .main-single_inner{
     padding: 0px 56px;

@@ -227,5 +227,15 @@ function my_wp_ajax() {
 	}
 	die();
 }
-add_action( 'wp_ajax_my_ajax', 'my_wp_ajax' );
-add_action( 'wp_ajax_nopriv_my_ajax', 'my_wp_ajax' );
+add_action( 'wp_ajax_my_func', 'my_func' );
+add_action( 'wp_ajax_nopriv_my_func', 'my_func' );
+
+add_action( 'wp_enqueue_scripts', 'sh_add_scripts' );
+
+// JavaScript登録
+function sh_add_scripts() {
+    if ( is_page( 'wp-content-ajax-viewer' ) ) {
+        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array( 'jquery' ), true );
+    }
+}

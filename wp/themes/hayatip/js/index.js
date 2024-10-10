@@ -51,4 +51,43 @@ $(function(){
       $('.js-archive-img').find('img').height($('.js-archive-img').find('img').width());
     }); 
   }
+
+  var now_post_num = 9; // 現在表示されている数を指定
+  var get_post_num = 6; // 取得したい数を指定
+  $(function() {
+    $(document).on('click', '#js-more', function() {
+      var ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore.php';
+      $.ajax({
+        type: 'post',
+        url: ajax_url,
+        data: {
+          'now_post_num': now_post_num,
+          'get_post_num': get_post_num,
+        },
+        dataType: 'html',
+      })
+      .done(function(data){
+        now_post_num = now_post_num + get_post_num;
+        $("#js-more").remove();
+        $("#js-new-list").append(data);
+      })
+      .fail(function(){ // ajax通信成失敗の処理
+        alert('エラーが発生しました');
+      })
+      return false;
+    });
+  });
+
+  $(document).on("ajaxSend", function(e,jqXHR,obj){
+    var $loading = $("#js-loading");
+    $loading.hide();
+    setTimeout(function(){
+      $.when(jqXHR).done(function(data){
+        $loading.show();
+      });
+      $.when(jqXHR).fail(function(){
+        $loading.hide();
+      });
+    },400);
+  });
 });
