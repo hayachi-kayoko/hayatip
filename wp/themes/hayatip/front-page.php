@@ -17,7 +17,7 @@
                 $postslist = get_posts( $args );
                 foreach ( $postslist as $post ) :
                 setup_postdata( $post ); ?> 
-                    <div><?php the_post_thumbnail(array(214, 214)); ?></div>
+                    <div><?php the_post_thumbnail(); ?></div>
                 <?php
                 endforeach; 
                 wp_reset_postdata();

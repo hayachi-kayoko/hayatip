@@ -95,6 +95,12 @@ html {
     }
 }
 
+/*スライダー*/
+.slick-slide img{
+    width: 214px !important;
+    height: auto;
+}
+
 /*メニュー*/
 .menu{
     padding: 8% !important;
@@ -1113,6 +1119,8 @@ html {
 .main-archive_inner_item_img img{
     transform: scale(1);
     transition: all .5s;
+    word-wrap: 100%;
+    height: auto;
 }
 
 .main-archive_inner_item_category{

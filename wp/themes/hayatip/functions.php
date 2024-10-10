@@ -204,3 +204,28 @@ if ( ! function_exists( 'twentytwentyfour_pattern_categories' ) ) :
 endif;
 add_theme_support('post-thumbnails');
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
+add_action( 'pre_get_posts', 'my_custom_query_vars' );
+
+
+/* 初期表示件数を設定 */
+function my_custom_query_vars( $query ) {
+	if ( !is_admin() && $query->is_main_query()) {
+		if ( is_post_type_archive() ) {
+			$query->set( 'posts_per_page' , 9 );	//一覧表示件数が20件の場合
+		}
+	}
+	return $query;
+}
+add_action( 'pre_get_posts', 'my_custom_query_vars' );
+
+/* ajax処理 */
+function my_wp_ajax() {
+
+	$nonce = $_REQUEST['nonce'];
+	if ( wp_verify_nonce( $nonce, 'my-ajax-nonce' ) ) {
+		echo '返す値';
+	}
+	die();
+}
+add_action( 'wp_ajax_my_ajax', 'my_wp_ajax' );
+add_action( 'wp_ajax_nopriv_my_ajax', 'my_wp_ajax' );

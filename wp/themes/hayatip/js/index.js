@@ -51,5 +51,4 @@ $(function(){
       $('.js-archive-img').find('img').height($('.js-archive-img').find('img').width());
     }); 
   }
-  
 });
