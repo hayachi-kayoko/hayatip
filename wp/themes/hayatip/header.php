@@ -38,11 +38,15 @@
 <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/image/png" />
 </head>
 <body class="body">
-<div class="bg bg--1"><img src="<?php echo get_template_directory_uri(); ?>/image/bg-item1.png" alt=""></div>
-    <div class="bg bg--2"><img src="<?php echo get_template_directory_uri(); ?>/image/bg-item2.png" alt=""></div>
-    <div class="bg bg--3"><img src="<?php echo get_template_directory_uri(); ?>/image/bg-item3.png" alt=""></div>
+    <?php
+       if(is_front_page()){
+        echo '<div class="bg bg--1"><img src="' . get_template_directory_uri() . '/image/bg-item1.png" alt=""></div>
+        <div class="bg bg--2"><img src="' . get_template_directory_uri() . '/image/bg-item2.png" alt=""></div>
+       <div class="bg bg--3"><img src="' . get_template_directory_uri() . '/image/bg-item3.png" alt=""></div>';
+       }
+    ?>
 
-    <header class="header">
+    <header class="header <?php if(!is_front_page()){echo 'header--detail';}?>">
         <h1 class="logo logo--pc logo--sp"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/image/logo.png" alt="はやちっぷ"></a></h1>
         <div id="js-menu-btn" class="menu-btn">
             <ul>
@@ -57,15 +61,26 @@
                 <li>
                     <span class="menu_btn" id="js-category-btn">カテゴリー<i class="menu_btn_arrow"><img src="<?php echo get_template_directory_uri(); ?>/image/arrow1.svg" alt=""></i></span>
                     <ul class="menu_category" id="js-category-inner">
-                        <li><a href="#">ショートネイル</a></li>
-                        <li><a href="#">ロングネイル</a></li>
-                        <li><a href="#">フットネイル</a></li>
-                        <li><a href="#">ネイルピアス</a></li>
-                        <li><a href="#">計測用ネイルチップ</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ショートネイル')) );?>">ショートネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ロングネイル')) );?>">ロングネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('フットネイル')) );?>">フットネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ネイルピアス')) );?>">ネイルピアス</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('計測用ネイルチップ')) );?>">計測用ネイルチップ</a></li>
                     </ul>
                 </li>
-                <li><a href="#">はやちっぷ<i>とは</i></a></li>
-                <li><a href="#">作者<i>について</i></a></li>
+                <?php 
+                    if(is_front_page()){
+                        echo '<li><a href="#about">はやちっぷ<i>とは</i></a></li>
+                              <li><a href="#user">作者<i>について</i></a></li>
+                              <li><a href="#reason"><i>選ばれる3つの理由</i></a></li>
+                              <li><a href="#shop">購入<i>にあたって</i></a></li>';
+                    } else {
+                        echo '<li><a href="' . home_url() . '/#about">はやちっぷ<i>とは</i></a></li>
+                              <li><a href="' . home_url() . '/#user">作者<i>について</i></a></li>
+                              <li><a href="' . home_url() . '/#reason"><i>選ばれる3つの理由</i></a></li>
+                              <li><a href="' . home_url() . '/#shop">購入<i>にあたって</i></a></li>';
+                    }
+                ?>
             </ul>
         </nav>
 

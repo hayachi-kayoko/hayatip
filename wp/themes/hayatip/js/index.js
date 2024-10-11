@@ -32,7 +32,7 @@ $(function(){
   /*メニュー*/
   var $jsMenuBtn = $('#js-menu-btn');
   var $jsMenu = $('#js-menu');
- 
+
   $jsMenuBtn.on('click',function(){
     console.log('menu');
     if($(this).hasClass('is-open')){
@@ -52,9 +52,22 @@ $(function(){
     }); 
   }
 
+  /*ボタンの非表示*/
+  if($('.main-archive_inner_item').length >= 9){
+    console.log('9');
+    if(location.href === 'https://hayatip.cutegirl.jp/category/measurement/'){
+      $('#js-more').hide();
+    } else {
+      $('#js-more').show();
+    }
+  } else {
+    $('#js-more').hide();
+  }
+
   var now_post_num = 9; // 現在表示されている数を指定
   var get_post_num = 6; // 取得したい数を指定
   $(function() {
+    
     $(document).on('click', '#js-more', function() {
       var ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore.php';
       $.ajax({
@@ -68,7 +81,7 @@ $(function(){
       })
       .done(function(data){
         now_post_num = now_post_num + get_post_num;
-        $("#js-more").remove();
+        $(".more-btn").remove();
         $("#js-new-list").append(data);
       })
       .fail(function(){ // ajax通信成失敗の処理
@@ -77,17 +90,26 @@ $(function(){
       return false;
     });
   });
-
-  $(document).on("ajaxSend", function(e,jqXHR,obj){
-    var $loading = $("#js-loading");
-    $loading.hide();
-    setTimeout(function(){
-      $.when(jqXHR).done(function(data){
-        $loading.show();
-      });
-      $.when(jqXHR).fail(function(){
-        $loading.hide();
-      });
-    },400);
+  
+  $(function() {
+    // スクロールのオフセット値
+    var offsetY = -10;
+    // スクロールにかかる時間
+    var time = 500;
+  
+    // ページ内リンクのみを取得
+    $('a[href^=#]').click(function() {
+      // 移動先となる要素を取得
+      var target = $(this.hash);
+      if (!target.length) return ;
+      // 移動先となる値
+      var targetY = target.offset().top+offsetY;
+      // スクロールアニメーション
+      $('html,body').animate({scrollTop: targetY}, time, 'swing');
+      // ハッシュ書き換えとく
+      window.history.pushState(null, null, this.hash);
+      // デフォルトの処理はキャンセル
+      return false;
+    });
   });
 });

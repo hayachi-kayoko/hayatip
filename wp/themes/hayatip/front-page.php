@@ -26,7 +26,7 @@
         </div>
 
         <!--はやちっぷとは-->
-        <section class="main-index_content main-index_content--right main-index_content--btn">
+        <section id="about" class="main-index_content main-index_content--right main-index_content--btn">
             <h3 class="main-index_content_title main-index_content_title--right">はやちっぷ<span>とは</span></h3>
             <p class="main-index_content_text">シンプルなデザインを基本に、個性的な要素も取り入れた作品を制作しています。手頃な価格でご提供しています。</p>
             <div class="main-index_content_inner">
@@ -34,17 +34,17 @@
                 <div class="main-index_content_inner_group">
                     <div class="main-index_content_inner_group_figure">
                         <img src="<?php echo get_template_directory_uri(); ?>/image/tip.jpg" alt="計測ネイルチップ">
-                        <a href="#" class="btn btn--keisoku">計測ネイルチップ</a>
+                        <a href="<?php echo home_url(); ?>/category/measurement/" class="btn btn--keisoku">計測ネイルチップ</a>
                     </div>
                     <p>ネイルチップのサイズ指定や、5種類の形からお好きなデザインをお選びいただけます。これらのサービスはすべて無料でご利用いただけます。サイズ計測には、専用の計測用ネイルチップをご購入いただけますので、そちらをご活用ください。</p>
                 </div>
-                <a href="#" class="btn btn--index">商品一覧<span><img src="<?php echo get_template_directory_uri(); ?>/image/arrow1.svg" alt=""></span></a>
+                <a href="<?php echo home_url(); ?>/all" class="btn btn--index">商品一覧<span><img src="<?php echo get_template_directory_uri(); ?>/image/arrow1.svg" alt=""></span></a>
             </div>
             <div class="main-index_content_item"><img src="<?php echo get_template_directory_uri(); ?>/image/item1.png" alt=""></div>
         </section>
 
         <!--作者について-->
-        <section class="main-index_content main-index_content--left">
+        <section id="user" class="main-index_content main-index_content--left">
             <h3 class="main-index_content_title main-index_content_title--left main-index_content_title--sakusya"><strong>作</strong><span>者</span><i>について</i></h3>
             <div class="main-index_content_inner main-index_content_inner--sakusya">
                 <div class="main-index_content_inner_left">
@@ -62,7 +62,7 @@
         </section>
 
         <!--reason-->
-        <div class="reason">
+        <div id="reason" class="reason">
             <div class="reason-tiele">
                 <span class="reason-tiele_sub">reason</span>
                 <h3 class="reason-tiele_sub-title">
@@ -106,13 +106,11 @@
         </div>
 
         <!--購入にあたって-->
-        <section class="main-index_content main-index_content--right">
+        <section id="shop" class="main-index_content main-index_content--right">
             <h3 class="main-index_content_title main-index_content_title--right">購<strong>入</strong><span>にあたって</span></h3>
             <p class="main-index_content_text main-index_content_text--kounyu">シンプルなデザインを基本に、時々個性的な要素を取り入れた作品を制作しています。</p>
             <p class="main-index_content_text main-index_content_text--kounyu">発送はご入金後、約5日以内を予定しています。ご注文確定後のキャンセルはできませんので、あらかじめご了承ください。また、返金はお受けできませんので、トラブルがあった方の今後のご購入はお控えいただきますようお願いいたします。</p>
             <p class="main-index_content_text main-index_content_text--kounyu">ダストや気泡が入る可能性があります。丁寧に制作いたしますが、その点もご了承ください。お客様のお手元に届いた際に喜んでいただけるよう、精一杯努力いたします。</p>
         </section>
     </main>
-    <footer class="footer">&copy;2024.hayatip</footer>
-</body>
-</html>
+    <?php get_footer(); ?>

@@ -1,3 +1,3 @@
-<footer class="footer">&copy;2024.hayatip</footer>
+<footer class="footer <?php if(!is_front_page()){echo 'footer--detail';}?>">&copy;2024.hayatip</footer>
 </body>
 </html>

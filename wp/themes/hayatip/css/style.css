@@ -330,6 +330,7 @@ html {
 .main-archive{
     width: 80%;
     margin-left: 20%;
+    background: #fff;
 }
 @media screen and (max-width: 1201px) {
     .main-archive{
@@ -366,7 +367,8 @@ html {
 }
 @media screen and (max-width: 321px) {
     .main-index .main-index_catch{
-        height: 270px;
+        height: 200px;
+        margin-bottom: 100px;
     }
 }
 
@@ -400,6 +402,12 @@ html {
     position: absolute;
     top: 91px;
     left: 49px;
+}
+@media screen and (max-width: 321px) {
+    .main-index .main-index_catch img{
+        position: absolute;
+        top: 51px;
+    }
 }
 
 .main-index_btn{
@@ -652,13 +660,13 @@ html {
 @media screen and (max-width: 914px) {
     .main-index_content_title{
         font-size: 24px;
-        line-height: 4.0rem;
+        line-height: 3.0rem;
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
         text-indent: 0;
         padding: 10px 10px 10px 10px;
         margin-bottom: 30px !important;
-        letter-spacing: 1rem;
+        letter-spacing: 0.3rem;
         display: block;
         margin: auto;
         position: static;
@@ -980,21 +988,21 @@ html {
     }
 }
 
-.breadcrumbs_group_item--home path{
+.breadcrumbs_group_item path{
     fill: #FFC1C1 !important;
 }
 
-.breadcrumbs_group_item--home svg{
+.breadcrumbs_group_item svg{
     width: 20px;
     position: relative;
     top: 2px;
 }
-.breadcrumbs_group_item--home a{
+.breadcrumbs_group_item a{
     display: inline-block;
     color: #FFC1C1;
     text-decoration: underline;
 }
-.breadcrumbs_group_item--home a:hover{
+.breadcrumbs_group_item a:hover{
     text-decoration: none;
 }
 
@@ -1180,6 +1188,9 @@ html {
 .more-btn{
     text-align: center;
     margin-bottom: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: calc(60% - (345px / 2));
 }
 
 .more-btn span{
@@ -1216,6 +1227,10 @@ html {
         padding: 0px 15px;
         display: block;
     }
+}
+
+.main-archive_inner{
+    margin-bottom: 200px;
 }
 
 .main-archive_inner_item_img--single{
@@ -1324,6 +1339,10 @@ html {
     border: 1px solid #FFC1C1;
     border-radius: 30px;
     overflow: hidden;
+}
+
+.single-links_group_empty{
+    background: #FFFBFB;
 }
 
 .single-links_group li{
