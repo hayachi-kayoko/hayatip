@@ -38,9 +38,11 @@ $(function(){
     if($(this).hasClass('is-open')){
       $(this).removeClass('is-open');
       $jsMenu.removeClass('is-open');
+      $jsMenu.find('> ul').fadeOut(0);
     } else {
       $(this).addClass('is-open');
       $jsMenu.addClass('is-open');
+      $jsMenu.find('> ul').fadeIn(500);
     }
   });
 
@@ -67,7 +69,6 @@ $(function(){
   var now_post_num = 9; // 現在表示されている数を指定
   var get_post_num = 6; // 取得したい数を指定
   $(function() {
-    
     $(document).on('click', '#js-more', function() {
       var ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore.php';
       $.ajax({

@@ -118,14 +118,7 @@ html {
         padding: 0px;
     }
     .menu--sp > ul{
-        transition: all 0s 0s;
-        opacity: 0;
-        transform: translateX(-10%);
-    }
-    .menu--sp.is-open > ul{
-        transition: all .5s .5s;
-        opacity: 1;
-        transform: translateX(0%);
+        display: none;
     }
 }
 @media screen and (max-width: 1201px) {
@@ -966,7 +959,7 @@ html {
 .reason-section_inner_title{
     text-align:center;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .reason-section_inner_title_item{

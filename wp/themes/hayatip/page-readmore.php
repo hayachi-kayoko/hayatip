@@ -50,7 +50,5 @@ echo '</article>';
   // $loopcounter数を判断して再度READ MOREボタン設置
   if($loopcounter = $get_post_num) {
     echo '<div class="more-btn"><span class="btn" id="js-more">もっと<i>見る</i></span></div>';
-  } else {
-    echo '';
   }
 ?>
