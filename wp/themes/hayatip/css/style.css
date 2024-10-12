@@ -1399,8 +1399,15 @@ html {
     font-size: 14px;
     font-weight: 500;
     color: #FFFBFB;
-    background: #FFC1C1;
-    padding: 10px 0px;
+    padding: 10px 0px 0px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.copy{
+    position: absolute;
+    left: calc(50% - (85px / 2));
+    bottom: 10px;
 }
 
 .footer--detail{
