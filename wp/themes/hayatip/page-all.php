@@ -27,7 +27,7 @@
       $cat = get_the_category();
       $cat = $cat[0];
     ?>
-          <article class="main-archive_inner_item main-archive_inner_item--<?php echo $cat->slug; ?>">
+          <article class="main-archive_inner_item js-static main-archive_inner_item--<?php echo $cat->slug; ?>">
               <a href="<?php echo esc_url(get_permalink()); ?>">
                   <span class="main-archive_inner_item_category main-archive_inner_item_category--<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></span>
                   <figure class="main-archive_inner_item_img js-archive-img">

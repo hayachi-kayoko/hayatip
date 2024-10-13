@@ -88,6 +88,7 @@ $(function(){
       .done(function(data){
         now_post_num = now_post_num + get_post_num;
         $("#js-new-list").append(data);
+        $('.js-item').fadeIn(300);
         $('.js-static').each(function(){
           $('.js-item.is-' + $(this).data('name')).remove();
         });
@@ -119,9 +120,8 @@ $(function(){
         }
         if($('.js-item.is-hidden').length === 0){
           $("#js-more").remove();
-        } else {
-          $('.js-item').removeClass('is-hidden');
         }
+        $('.js-item').removeClass('is-hidden');
       })
       .fail(function(){ // ajax通信成失敗の処理
         alert('エラーが発生しました');
