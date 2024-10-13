@@ -333,6 +333,21 @@ html {
     }
 }
 
+.main-single{
+    width: 80%;
+    margin-left: 20%;
+    height: 100vh;
+    background: #fff;
+}
+@media screen and (max-width: 1201px) {
+    .main-single{
+        width: 100%;
+        height: inherit;
+        margin-left:0%;
+        padding: 0px !important;
+    }
+}
+
 .main-index .main-index_catch {
     background: url("../image/top.png") no-repeat;
     background-size: cover;
@@ -774,7 +789,7 @@ html {
 }
 
 .main-index_content_inner_group_figure{
-    width: 244px;
+    width:1000px;
 }
 @media screen and (max-width: 914px) {
     .main-index_content_inner_group_figure{
@@ -783,6 +798,22 @@ html {
     .main-index_content_inner_group_figure img{
         width: 100%;
     }
+}
+
+.main-index_content_inner_group_figure image {
+   width: 100% !important;
+   clip-path: url(#introductionImage__01);
+   position: relative;
+   top: -100px;
+}
+.c-svgBase {
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.is-hidden{
+    display: none;
 }
 
 /*作者について*/

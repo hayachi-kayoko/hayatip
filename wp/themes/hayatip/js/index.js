@@ -56,15 +56,20 @@ $(function(){
 
   /*ボタンの非表示*/
   if($('.main-archive_inner_item').length >= 9){
-    console.log('9');
     if(location.href === 'https://hayatip.cutegirl.jp/category/measurement/'){
-      $('#js-more').hide();
+      $('#js-more').remove();
     } else {
       $('#js-more').show();
     }
   } else {
-    $('#js-more').hide();
+    $("#js-more").remove();
   }
+
+  /*canvas*/
+  $('#sineCanvas').width($(window).width());
+  $(window).on('click',function(){
+    $('#sineCanvas').width($(window).width());
+  });
 
   var now_post_num = 9; // 現在表示されている数を指定
   var get_post_num = 6; // 取得したい数を指定
@@ -82,8 +87,41 @@ $(function(){
       })
       .done(function(data){
         now_post_num = now_post_num + get_post_num;
-        $(".more-btn").remove();
         $("#js-new-list").append(data);
+        $('.js-static').each(function(){
+          $('.js-item.is-' + $(this).data('name')).remove();
+        });
+        if(location.hash == '#short'){
+          $('.js-item.is-long').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-measurement').remove();
+        } else if(location.hash == '#long') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-measurement').remove();
+        } else if(location.hash == '#earring') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-measurement').remove();
+        } else if(location.hash == '#foot') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-measurement').remove();
+        } else if(location.hash == '#measurement') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-foot').remove();
+        }
+        if($('.js-item.is-hidden').length === 0){
+          $("#js-more").remove();
+        } else {
+          $('.js-item').removeClass('is-hidden');
+        }
       })
       .fail(function(){ // ajax通信成失敗の処理
         alert('エラーが発生しました');

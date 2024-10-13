@@ -61,11 +61,11 @@
                 <li>
                     <span class="menu_btn" id="js-category-btn">カテゴリー<i class="menu_btn_arrow"><img src="<?php echo get_template_directory_uri(); ?>/image/arrow1.svg" alt=""></i></span>
                     <ul class="menu_category" id="js-category-inner">
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ショートネイル')) );?>">ショートネイル</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ロングネイル')) );?>">ロングネイル</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('フットネイル')) );?>">フットネイル</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ネイルピアス')) );?>">ネイルピアス</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('計測用ネイルチップ')) );?>">計測用ネイルチップ</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ショートネイル')) );?>/#short">ショートネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ロングネイル')) );?>/#long">ロングネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('フットネイル')) );?>/#foot">フットネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ネイルピアス')) );?>/#earring">ネイルピアス</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('計測用ネイルチップ')) );?>/#measurement">計測用ネイルチップ</a></li>
                     </ul>
                 </li>
                 <?php 

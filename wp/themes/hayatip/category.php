@@ -40,7 +40,7 @@
          <?php $the_query = new WP_Query($args); ?>
           <?php if($the_query->have_posts()): ?>
           <?php while($the_query->have_posts()): $the_query->the_post(); ?>
-          <article class="main-archive_inner_item main-archive_inner_item--<?php echo $cat->slug; ?>">
+          <article class="main-archive_inner_item main-archive_inner_item--<?php echo $cat->slug; ?> js-static js-<?php echo $post->post_name;?>" data-name="<?php echo $post->post_name;?>">
               <a href="<?php echo esc_url(get_permalink()); ?>">
                   <span class="main-archive_inner_item_category main-archive_inner_item_category--<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></span>
                   <figure class="main-archive_inner_item_img js-archive-img">
@@ -52,7 +52,7 @@
               </a>
           </article>
           <?php endwhile; endif; wp_reset_postdata(); ?>
+          <div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>
       </div>
-      <div class="more-btn"><span class="btn" id="js-more">もっと<i>見る</i></span></div>
-      </main>
+    </main>
     <?php get_footer(); ?>

@@ -27,14 +27,15 @@
     $img = wp_get_attachment_image_src($imgid, 'large');
     $title = the_title( '', '', false );
     $price = get_field('price');
-    $mercari = get_field('mercari');;
+    $mercari = get_field('mercari');
     $url = esc_url(get_permalink());
+    $name = $post->post_name;
 ?>
 <?php
 //ヒアドキュメントでループ内の内容を変数に格納
-echo '<article class="main-archive_inner_item">';
+echo '<article class="main-archive_inner_item js-item is-hidden is-' . $name . ' is-' . $cat->slug . '"data-name="' . $name . '">';
 echo '<a href="' . $url . '">';
-echo '<span class="main-archive_inner_item_category main-archive_inner_item_category--' . $cat->slug . '"><span>' . $cat->name . '</span></span>';
+echo '<span class="main-archive_inner_item_category main-archive_inner_item_category--' . $cat->slug . '";><span>' . $cat->name . '</span></span>';
 echo '<figure class="main-archive_inner_item_img js-archive-img"><img src="' . $img[0] . '" alt="' . $title . '"></figure>';
 echo '<h3 class="main-archive_inner_item_title">' . $title . '</h3>';
 echo '<p class="main-archive_inner_item_price"><span>¥</span>' . $price . '</p>';
@@ -42,13 +43,6 @@ echo '<p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</s
 echo '</a>';
 echo '</article>';
 ?>
- 
-  <?php endwhile; ?>
+
+<?php endwhile; ?>
 <?php endif; wp_reset_postdata(); ?>
- 
-<?php
-  // $loopcounter数を判断して再度READ MOREボタン設置
-  if($loopcounter = $get_post_num) {
-    echo '<div class="more-btn"><span class="btn" id="js-more">もっと<i>見る</i></span></div>';
-  }
-?>

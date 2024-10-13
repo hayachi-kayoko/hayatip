@@ -39,7 +39,7 @@
               </a>
           </article>
           <?php endforeach; wp_reset_postdata(); ?>
-          <div class="more-btn"><span class="btn" id="js-more">もっと<i>見る</i></span></div>
+          <div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>
       </div>
     </main>
     <?php get_footer(); ?>

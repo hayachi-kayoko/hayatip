@@ -33,7 +33,14 @@
                 <h4 class="main-index_content_inner_title">サイズフルオーダー、チップの形変更承ります。</h4>
                 <div class="main-index_content_inner_group">
                     <div class="main-index_content_inner_group_figure">
-                        <img src="<?php echo get_template_directory_uri(); ?>/image/tip.jpg" alt="計測ネイルチップ">
+                        <svg width="0" height="0" class="c-svgBase">
+                            <clipPath id="introductionImage__01">
+                                <path d="M368.1,40c41,33,59.4,89.1,49.9,146.9c-9.5,57.6-47,117.2-107.7,142.6s-144.9,16.6-206.5-13.3C42,285.9,2.6,234.7,1.1,187.9c-1.6-46.6,34.6-88.3,74-121.3c39.4-32.8,82-56.8,135-63.5C263.2-3.8,327.1,6.7,368.1,40z"></path>
+                            </clipPath>
+                        </svg>
+                        <svg viewBox="0 0 421.5 345.4">
+								<image xlink:href="<?php echo get_template_directory_uri(); ?>/image/keisoku.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#introductionImage__01)"></image>
+						</svg>
                         <a href="<?php echo home_url(); ?>/category/measurement/" class="btn btn--keisoku">計測ネイルチップ</a>
                     </div>
                     <p>ネイルチップのサイズ指定や、5種類の形からお好きなデザインをお選びいただけます。これらのサービスはすべて無料でご利用いただけます。サイズ計測には、専用の計測用ネイルチップをご購入いただけますので、そちらをご活用ください。</p>

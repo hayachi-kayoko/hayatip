@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="main-archive main">
+<main class="main-single main">
 <?php
         // カテゴリーのデータを取得
         $cat = get_the_category();
