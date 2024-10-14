@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/slick.css">
+<link rel="canonical" href="https://hayatip.cutegirl.jp/" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/slick.js"></script>
@@ -18,24 +19,21 @@
 <link rel="icon" href="image/favicon.ico">
 <!--OGP-->
 <meta property="og:locale" content="ja_JP">
-<meta property="og:locale" content="website">
+<meta property="og:type" content="website">
 <meta property="og:title" content="はやちっぷ - nail tip shop">
 <meta property="og:description" content="シンプルなデザインを基本に、個性的な要素も取り入れた作品を制作しています。手頃な価格でご提供しています。">
 <meta property="og:url" content="https://hayatip.cutegirl.jp/">
-<meta property="og:image" content="1200-630.png">
-<meta property="og:image:secure_url" content="1200-630.png">
+<meta property="og:image" content="https://hayatip.cutegirl.jp/wp-content/themes/hayatip/image/ogp.jpg">
+<meta property="og:image:secure_url" content="https://hayatip.cutegirl.jp/wp-content/themes/hayatip/image/ogp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="”はやちっぷ - nail tip shop">
-<meta property="og:image:type" content="<?php echo get_template_directory_uri(); ?>/image/png">
+<meta property="og:image:type" content="<?php echo get_template_directory_uri(); ?>/image/ogp.jpg">
 <!--x-->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@nytimesbits" />
-<meta name="twitter:creator" content="@nickbilton" />
-<meta property="og:url" content="https://hayatip.cutegirl.jp/" />
-<meta property="og:title" content="はやちっぷ - nail tip shop" />
-<meta property="og:description" content="シンプルなデザインを基本に、個性的な要素も取り入れた作品を制作しています。手頃な価格でご提供しています。" />
-<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/image/png" />
+<meta name="twitter:url" content="https://hayatip.cutegirl.jp/" />
+<meta name="twitter:title" content="はやちっぷ - nail tip shop" />
+<meta name="twitter:description" content="シンプルなデザインを基本に、個性的な要素も取り入れた作品を制作しています。手頃な価格でご提供しています。" />
 </head>
 <body class="body">
     <?php
@@ -61,11 +59,13 @@
                 <li>
                     <span class="menu_btn" id="js-category-btn">カテゴリー<i class="menu_btn_arrow"><img src="<?php echo get_template_directory_uri(); ?>/image/arrow1.svg" alt=""></i></span>
                     <ul class="menu_category" id="js-category-inner">
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ショートネイル')) );?>/#short">ショートネイル</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ロングネイル')) );?>/#long">ロングネイル</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('フットネイル')) );?>/#foot">フットネイル</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ネイルピアス')) );?>/#earring">ネイルピアス</a></li>
-                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('計測用ネイルチップ')) );?>/#measurement">計測用ネイルチップ</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ショートネイル')) );?>">ショートネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ロングネイル')) );?>">ロングネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('フットネイル')) );?>">フットネイル</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('ネイルピアス')) );?>">ネイルピアス</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('計測用ネイルチップ')) );?>">計測用ネイルチップ</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('現品のみ')) );?>">現品のみ</a></li>
+                        <li><a href="<?php echo esc_url( get_category_link(get_cat_ID('オプション')) );?>">オプション</a></li>
                     </ul>
                 </li>
                 <?php 
@@ -83,23 +83,6 @@
                 ?>
             </ul>
         </nav>
+        <?php get_search_form(); ?>
 
-        <form action="./" class="side-search">
-            <div class="side-search_box">
-                <input class="side-search_box_text" type="text" placeholder="検索できます">
-                <button class="side-search_box_button" type="submit">
-                    <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
-                        <path d="M332.998,291.918c52.2-71.895,45.941-173.338-18.834-238.123c-71.736-71.728-188.468-71.728-260.195,0
-                                c-71.746,71.745-71.746,188.458,0,260.204c64.775,64.775,166.218,71.034,238.104,18.844l14.222,14.203l40.916-40.916
-                                L332.998,291.918z M278.488,278.333c-52.144,52.134-136.699,52.144-188.852,0c-52.152-52.153-52.152-136.717,0-188.861
-                                c52.154-52.144,136.708-52.144,188.852,0C330.64,141.616,330.64,226.18,278.488,278.333z"></path>
-                            <path d="M109.303,119.216c-27.078,34.788-29.324,82.646-6.756,119.614c2.142,3.489,6.709,4.603,10.208,2.46
-                                c3.49-2.142,4.594-6.709,2.462-10.198v0.008c-19.387-31.7-17.45-72.962,5.782-102.771c2.526-3.228,1.946-7.898-1.292-10.405
-                                C116.48,115.399,111.811,115.979,109.303,119.216z"></path>
-                            <path d="M501.499,438.591L363.341,315.178l-47.98,47.98l123.403,138.168c12.548,16.234,35.144,13.848,55.447-6.456
-                                C514.505,474.576,517.743,451.138,501.499,438.591z"></path>
-                        </svg>
-                </button>
-            </div>
-        </form>
     </header>

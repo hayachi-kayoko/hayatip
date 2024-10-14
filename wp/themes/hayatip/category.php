@@ -23,7 +23,7 @@
         <?php 
         $args = array(
             'post_type' => "post", //投稿タイプ
-            'posts_per_page' => get_option('9'), //何件ずつ表示するか
+            'posts_per_page' => get_option('6'), //何件ずつ表示するか
             'paged' => $paged
         );
         $myquery = new WP_Query($args);
@@ -37,19 +37,51 @@
             'paged' => $paged,
             );
         ?>
+        <?php
+        if($cat->slug === 'short'){
+            $cat = get_category_by_slug('short');//特定のスラッグ名を指定
+        } else if($cat->slug === 'long'){
+            $cat = get_category_by_slug('long');//特定のスラッグ名を指定
+        } else if($cat->slug === 'earring'){
+            $cat = get_category_by_slug('earring');//特定のスラッグ名を指定
+        } else if($cat->slug === 'foot'){
+            $cat = get_category_by_slug('foot');//特定のスラッグ名を指定
+        } else if ($cat->slug === 'measurement'){
+            $cat = get_category_by_slug('measurement');//特定のスラッグ名を指定
+        } else if ($cat->slug === 'actual-item'){
+            $cat = get_category_by_slug('actual-item');//特定のスラッグ名を指定
+        } else if ($cat->slug === 'option'){
+            $cat = get_category_by_slug('option');//特定のスラッグ名を指定
+        }
+        $chosen_id = $cat->term_id;//スラッグ名からカテゴリーIDを取得
+        $thisCat = get_category($chosen_id);//カテゴリーの詳細データを取得
+        $post_sum = $thisCat->count;//カテゴリーの記事件数を表示
+        ?>
          <?php $the_query = new WP_Query($args); ?>
           <?php if($the_query->have_posts()): ?>
           <?php while($the_query->have_posts()): $the_query->the_post(); ?>
-          <article class="main-archive_inner_item main-archive_inner_item--<?php echo $cat->slug; ?> js-static js-<?php echo $post->post_name;?>" data-name="<?php echo $post->post_name;?>">
+          <article data-post="<?php echo $post_sum?>" class="js-items main-archive_inner_item main-archive_inner_item--<?php echo $cat->slug; ?> js-static js-<?php echo $post->post_name;?>" data-name="<?php echo $post->post_name;?>">
               <a href="<?php echo esc_url(get_permalink()); ?>">
                   <span class="main-archive_inner_item_category main-archive_inner_item_category--<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></span>
                   <figure class="main-archive_inner_item_img js-archive-img">
-                    <?php the_post_thumbnail(); ?>
+                    <?php the_post_thumbnail('full'); ?>
                   </figure>
                   <h3 class="main-archive_inner_item_title"><?php echo the_title(); ?></h3>
-                  <p class="main-archive_inner_item_price"><span>¥</span><?php the_field('price'); ?></p>
-                  <p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</span><?php the_field('mercari'); ?></p>
-              </a>
+                  
+                  <?php $price = get_post_meta($post->ID, 'price', true);?>
+                  <?php if(empty($price)):?>
+                      <!-- ★ここは空欄だった場合に表示されます(空でOK)。 -->
+                  <?php else:?>
+                    <p class="main-archive_inner_item_price"><span>¥</span><?php the_field('price'); ?></p>
+                  <?php endif;?>
+
+                  <?php $mercari = get_post_meta($post->ID, 'mercari', true);?>
+                  <?php if(empty($mercari)):?>
+                      <!-- ★ここは空欄だった場合に表示されます(空でOK)。 -->
+                  <?php else:?>
+                    <p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</span><?php the_field('mercari'); ?></p>
+                  <?php endif;?>          
+                </a>
           </article>
           <?php endwhile; endif; wp_reset_postdata(); ?>
           <div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>

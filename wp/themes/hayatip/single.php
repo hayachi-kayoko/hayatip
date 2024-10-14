@@ -24,6 +24,11 @@
              </li>
         </ul>
        </div>
+       <?php
+        // カテゴリーのデータを取得
+        $cat = get_the_category();
+        $cat = $cat[0];
+        ?>
        <div class="main-single_inner">
             <figure class="main-archive_inner_item_img main-archive_inner_item_img--single">
                 <?php the_post_thumbnail(); ?>
@@ -31,9 +36,20 @@
             <article class="main-single_inner_content">
                 <h3 class="main-single_inner_content_title"><?php echo the_title(); ?></h3>
                 <div class="main-single_inner_content_text"><?php echo the_content(); ?></div>
-                <span class="main-single_inner_content_category"><a href="<?php echo get_category_link($cat->term_id); ?>"><i>#</i><?php echo $cat->name; ?></a></span>
-                <p class="main-single_inner_content_price"><span>¥</span><strong><?php the_field('price'); ?></strong></p>
-                <p class="main-single_inner_content_price"><i>メルカリ→</i><span>¥</span><strong><?php the_field('mercari'); ?></strong></p>
+                <span class="main-single_inner_content_category"><a href="<?php echo get_category_link($cat->term_id);?>#<?php echo $cat->slug;?>"><i>#</i><?php echo $cat->name; ?></a></span>
+                <?php $price = get_post_meta($post->ID, 'price', true);?>
+                  <?php if(empty($price)):?>
+                      <!-- ★ここは空欄だった場合に表示されます(空でOK)。 -->
+                  <?php else:?>
+                    <p class="main-archive_inner_item_price"><span>¥</span><?php the_field('price'); ?></p>
+                  <?php endif;?>
+
+                  <?php $mercari = get_post_meta($post->ID, 'mercari', true);?>
+                  <?php if(empty($mercari)):?>
+                      <!-- ★ここは空欄だった場合に表示されます(空でOK)。 -->
+                  <?php else:?>
+                    <p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</span><?php the_field('mercari'); ?></p>
+                  <?php endif;?>
                 <div class="single-links">
                     <ul class="single-links_group">
 

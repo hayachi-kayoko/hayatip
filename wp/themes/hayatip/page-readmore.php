@@ -4,8 +4,6 @@
   require_once( dirname( __FILE__ ,4 ) . '/wp-config.php' );
   $now_post_num = $_POST['now_post_num'];
   $get_post_num = $_POST['get_post_num'];
-  $loopcounter = 0;
-  $html = '';
 ?>
 <?php
   $args = array(
@@ -31,9 +29,10 @@
     $url = esc_url(get_permalink());
     $name = $post->post_name;
 ?>
+
 <?php
 //ヒアドキュメントでループ内の内容を変数に格納
-echo '<article class="main-archive_inner_item js-item is-hidden is-' . $name . ' is-' . $cat->slug . '"data-name="' . $name . '">';
+echo '<article class="main-archive_inner_item js-item js-items is-hidden is-' . $name . ' is-' . $cat->slug . '"data-name="' . $name . '">';
 echo '<a href="' . $url . '">';
 echo '<span class="main-archive_inner_item_category main-archive_inner_item_category--' . $cat->slug . '";><span>' . $cat->name . '</span></span>';
 echo '<figure class="main-archive_inner_item_img js-archive-img"><img src="' . $img[0] . '" alt="' . $title . '"></figure>';

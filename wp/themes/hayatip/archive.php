@@ -17,7 +17,7 @@
     <div class="main-archive_inner">
               <?php
                 $args = array(
-                        'posts_per_page' => 12,
+                        'posts_per_page' => 9,
                         'order'          => 'ASC',
                         'orderby'        => 'title'
                         );
@@ -31,8 +31,19 @@
                     <?php the_post_thumbnail('large'); ?>
                   </figure>
                   <h3 class="main-archive_inner_item_title"><?php echo the_title(); ?></h3>
-                  <p class="main-archive_inner_item_price"><span>¥</span>1,000</p>
-                  <p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</span>1,140</p>
+                  <?php $price = get_post_meta($post->ID, 'price', true);?>
+                  <?php if(empty($price)):?>
+                      <!-- ★ここは空欄だった場合に表示されます(空でOK)。 -->
+                  <?php else:?>
+                    <p class="main-archive_inner_item_price"><span>¥</span><?php the_field('price'); ?></p>
+                  <?php endif;?>
+
+                  <?php $mercari = get_post_meta($post->ID, 'mercari', true);?>
+                  <?php if(empty($mercari)):?>
+                      <!-- ★ここは空欄だった場合に表示されます(空でOK)。 -->
+                  <?php else:?>
+                    <p class="main-archive_inner_item_price"><i>メルカリ→</i><span>¥</span><?php the_field('mercari'); ?></p>
+                  <?php endif;?>          
               </a>
           </article>
           <?php endforeach; wp_reset_postdata(); ?>
