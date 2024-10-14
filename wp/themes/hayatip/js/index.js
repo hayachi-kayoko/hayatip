@@ -64,7 +64,6 @@ $(function(){
   var get_post_num = 6; // 取得したい数を指定
 
   if($('.js-items').data('post') <= now_post_num){
-    console.log($('.js-items').length <= now_post_num);
     $("#js-more").remove();
   }
 
@@ -87,50 +86,50 @@ $(function(){
         $('.js-static').each(function(){
           $('.js-item.is-' + $(this).data('name')).remove();
         });
-      //   if(location.pathname == '/category/short/'){
-      //     $('.js-item.is-long').remove();
-      //     $('.js-item.is-earring').remove();
-      //     $('.js-item.is-foot').remove();
-      //     $('.js-item.is-measurement').remove();
-      //     $('.js-item.is-option').remove();
-      //     $('.js-item.is-actual-item').remove();
-      //   } else if(location.pathname == '/category/long/') {
-      //     $('.js-item.is-short').remove();
-      //     $('.js-item.is-earring').remove();
-      //     $('.js-item.is-foot').remove();
-      //     $('.js-item.is-measurement').remove();
-      //     $('.js-item.is-option').remove();
-      //     $('.js-item.is-actual-item').remove();
-      //   } else if(location.pathname == '/category/earring') {
-      //     $('.js-item.is-short').remove();
-      //     $('.js-item.is-foot').remove();
-      //     $('.js-item.is-long').remove();
-      //     $('.js-item.is-measurement').remove();
-      //     $('.js-item.is-option').remove();
-      //     $('.js-item.is-actual-item').remove();
-      //   } else if(location.pathname == '/category/foot') {
-      //     $('.js-item.is-short').remove();
-      //     $('.js-item.is-earring').remove();
-      //     $('.js-item.is-long').remove();
-      //     $('.js-item.is-measurement').remove();
-      //     $('.js-item.is-option').remove();
-      //     $('.js-item.is-actual-item').remove();
-      //   } else if(location.pathname == '/category/actual-item') {
-      //     $('.js-item.is-short').remove();
-      //     $('.js-item.is-earring').remove();
-      //     $('.js-item.is-long').remove();
-      //     $('.js-item.is-foot').remove();
-      //     $('.js-item.is-measurement').remove();
-      //     $('.js-item.is-option').remove();
-      //   } else if(location.pathname == '/category/option') {
-      //     $('.js-item.is-short').remove();
-      //     $('.js-item.is-earring').remove();
-      //     $('.js-item.is-long').remove();
-      //     $('.js-item.is-foot').remove();
-      //     $('.js-item.is-measurement').remove();
-      //     $('.js-item.is-actual-item').remove();
-      //   }
-      // })
+        if(location.pathname == '/category/short/'){
+          $('.js-item.is-long').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-measurement').remove();
+          $('.js-item.is-option').remove();
+          $('.js-item.is-actual-item').remove();
+        } else if(location.pathname == '/category/long/') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-measurement').remove();
+          $('.js-item.is-option').remove();
+          $('.js-item.is-actual-item').remove();
+        } else if(location.pathname == '/category/earring/') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-measurement').remove();
+          $('.js-item.is-option').remove();
+          $('.js-item.is-actual-item').remove();
+        } else if(location.pathname == '/category/foot/') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-measurement').remove();
+          $('.js-item.is-option').remove();
+          $('.js-item.is-actual-item').remove();
+        } else if(location.pathname == '/category/actual-item/') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-measurement').remove();
+          $('.js-item.is-option').remove();
+        } else if(location.pathname == '/category/option/') {
+          $('.js-item.is-short').remove();
+          $('.js-item.is-earring').remove();
+          $('.js-item.is-long').remove();
+          $('.js-item.is-foot').remove();
+          $('.js-item.is-measurement').remove();
+          $('.js-item.is-actual-item').remove();
+        }
+      })
       .fail(function(){ // ajax通信成失敗の処理
         alert('エラーが発生しました');
       })
