@@ -8,7 +8,6 @@
   $args = array(
     'post_type' => 'post',
     'posts_per_page' => $get_post_num,
-    'offset' => $now_post_num,
   );    
   $posts = new WP_Query($args);
   ?>
