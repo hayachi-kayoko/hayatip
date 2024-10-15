@@ -80,6 +80,8 @@ $(function(){
         ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore-earrings.php';
       } else if($('.more-btn').hasClass('is-search')){
         ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore-search.php';
+      } else if(location.pathname == '/all/'){
+        ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore.php';
       }
 
       $.ajax({
