@@ -78,7 +78,7 @@
                 ?>
             
             <?php endif; ?>
-          <div class="more-btn" id="js-more"><span class="btn">もっと<i>見る</i></span></div>
+            <div class="more-btn is-search" id="searchsubmit-more" type="submit"><span class="btn">もっと<i>見る</i></span></div>
       </div>
     </main>
 <?php get_footer(); ?>

@@ -34,7 +34,6 @@ $(function(){
   var $jsMenu = $('#js-menu');
 
   $jsMenuBtn.on('click',function(){
-    console.log('menu');
     if($(this).hasClass('is-open')){
       $(this).removeClass('is-open');
       $jsMenu.removeClass('is-open');
@@ -79,7 +78,7 @@ $(function(){
         ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore-foot.php';
       } else if(location.pathname == '/category/earrings/'){
         ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore-earrings.php';
-      } else {
+      } else if($('.more-btn').hasClass('is-search')){
         ajax_url = 'https://hayatip.cutegirl.jp/wp-content/themes/hayatip/page-readmore-search.php';
       }
 
