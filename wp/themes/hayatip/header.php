@@ -25,15 +25,22 @@
 <meta property="og:url" content="https://hayatip.cutegirl.jp/">
 <meta property="og:image" content="https://hayatip.cutegirl.jp/wp-content/themes/hayatip/image/ogp.jpg">
 <meta property="og:image:secure_url" content="https://hayatip.cutegirl.jp/wp-content/themes/hayatip/image/ogp.jpg">
+<meta property="og:image:type" content="<?php echo get_template_directory_uri(); ?>/image/ogp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="”はやちっぷ - nail tip shop">
-<meta property="og:image:type" content="<?php echo get_template_directory_uri(); ?>/image/ogp.jpg">
 <!--x-->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:url" content="https://hayatip.cutegirl.jp/" />
 <meta name="twitter:title" content="はやちっぷ - nail tip shop" />
 <meta name="twitter:description" content="シンプルなデザインを基本に、個性的な要素も取り入れた作品を制作しています。手頃な価格でご提供しています。" />
+<?php if(is_single()){?>
+    <meta name="twitter:title" content="はやちっぷ - nail tip shop- <?php echo the_title(); ?>">
+    <meta name="twitter:description" content="<?php echo the_content(); ?>">
+<?php } else { ?>
+    <meta name="twitter:title" content="はやちっぷ - nail tip shop" />
+    <meta name="twitter:description" content="シンプルなデザインを基本に、個性的な要素も取り入れた作品を制作しています。手頃な価格でご提供しています。" />
+<?php } ?>
 </head>
 <body class="body">
     <?php

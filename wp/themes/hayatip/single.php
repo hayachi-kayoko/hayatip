@@ -86,6 +86,8 @@
                     <?php endif;?>
                    
                 </div>
+                  <!-- X -->
+                <a class="btn--X" href="http://x.com/share?url=<?php the_permalink();?>&text=<?php echo get_the_title(); ?>&via=hayatip0606&tw_p=tweetbutton&related=hayatip0606" target="_blank">X</a>
             </article>
        </div>
        </main>
