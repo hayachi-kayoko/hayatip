@@ -87,7 +87,15 @@
                    
                 </div>
                   <!-- X -->
-                <a class="btn--X" href="http://x.com/share?url=<?php the_permalink();?>&text=<?php echo get_the_title(); ?>&via=hayatip0606&tw_p=tweetbutton&related=hayatip0606" target="_blank">X</a>
+                <p class="share">＼シェアもよろしくお願いします！／</p>
+                <ul class="share_group">
+                    <li class="share_group_item share_group_item--x">
+                        <a class="btn--X" href="http://x.com/share?url=<?php the_permalink();?>&text=<?php echo get_the_title(); ?>&via=hayatip0606&tw_p=tweetbutton&related=hayatip0606" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/image/logo-white.png" alt="X">
+                            <span>シェア</span>
+                        </a>
+                    </li>
+                </ul>
             </article>
        </div>
        </main>

@@ -1494,3 +1494,34 @@ html {
 .notfound-text{
     text-align: center;
 }
+
+.share{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.share_group{
+    display: flex;
+}
+
+.btn--X{
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 20px;
+}
+.btn--X img{
+    width: 20px;
+}
+
+.btn--pinterest{
+    background: #FFC1C1;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.btn--pinterest img{
+    width: 20px;
+}
