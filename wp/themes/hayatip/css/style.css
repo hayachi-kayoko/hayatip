@@ -1146,6 +1146,14 @@ html {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     transition: all .3s;
 }
+.main-archive_inner_item_img--single{
+    box-shadow: none;
+    overflow:visible;
+}
+.main-archive_inner_item_img--single img{
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}
 .main-archive_inner_item a:hover .main-archive_inner_item_img{
     box-shadow: 0px 0px 0px;
 }

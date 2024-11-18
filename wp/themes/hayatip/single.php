@@ -95,6 +95,12 @@
                             <span>シェア</span>
                         </a>
                     </li>
+                    <li class="share_group_item share_group_item--pinterest">
+                        <a class="btn--pinterest" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); echo $thumb['0']; ?>&description=<?php echo get_the_title(); ?>" target="_blank" rel="nofollow">
+                        <img src="<?php echo get_template_directory_uri(); ?>/image/P-Badge-Red-RGB.png" alt="pinterest">
+                        <span>シェア</span>
+                        </a>
+                    </li>
                 </ul>
             </article>
        </div>

@@ -228,4 +228,8 @@ $(function(){
     init();
         
     })();
+
+  $window.on('resize',function(){
+    $('#sineCanvas').width($window.width());
+  });
 });
